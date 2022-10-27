@@ -1,5 +1,6 @@
 const initialState = {
-  weather: null,
+  weather: [],
+  name: "",
 };
 
 export const weatherReducer = (state = initialState, action) => {
@@ -7,7 +8,8 @@ export const weatherReducer = (state = initialState, action) => {
     case "GETWEATHERDATA":
       return {
         ...state,
-        weather: action.payload,
+        weather: [action.payload],
+        name: action.payload.name,
       };
 
     default:
